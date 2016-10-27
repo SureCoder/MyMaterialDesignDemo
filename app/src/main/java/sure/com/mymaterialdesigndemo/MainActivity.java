@@ -25,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
     CollapsingToolbarLayout collapsingToolbarLayout;
     TabLayout tabLayout;
     ViewPager vp;
+    private TabLayout.Tab tab;
+    private TabLayout.Tab tab1;
+    private TabLayout.Tab tab2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         collapsingToolbarLayout.setTitleEnabled(false);
         vp.setAdapter(new ViewPagAdapter(getSupportFragmentManager()));
         tabLayout.setupWithViewPager(vp);
+        initIcon();
     }
 
     private void initToolbar() {
@@ -49,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addTab( tabLayout.newTab());
         tabLayout.addTab( tabLayout.newTab());
         tabLayout.addTab( tabLayout.newTab());
-        initIcon();
+
     }
 
     private void findView() {
@@ -73,11 +77,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initIcon() {
-       TabLayout.Tab tab =  tabLayout.getTabAt(0);
+        tab = tabLayout.getTabAt(0);
         tab.setCustomView(R.layout.tabitem);
-        TabLayout.Tab tab1 =  tabLayout.getTabAt(1);
+        tab1 = tabLayout.getTabAt(1);
         tab1.setCustomView(R.layout.tabitem);
-        TabLayout.Tab tab2 =  tabLayout.getTabAt(2);
+        tab2 = tabLayout.getTabAt(2);
         tab2.setCustomView(R.layout.tabitem);
     }
 }
