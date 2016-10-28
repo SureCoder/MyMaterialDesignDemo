@@ -1,8 +1,10 @@
-package sure.com.mymaterialdesigndemo;
+package sure.com.mymaterialdesigndemo.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import sure.com.mymaterialdesigndemo.ui.DemoFragment;
 
 /**
  * 描述：

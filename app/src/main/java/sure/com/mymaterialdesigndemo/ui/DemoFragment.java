@@ -1,4 +1,4 @@
-package sure.com.mymaterialdesigndemo;
+package sure.com.mymaterialdesigndemo.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,6 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import sure.com.mymaterialdesigndemo.R;
+
 /**
  * 描述：
  * 创建人：ShuoLi
@@ -19,10 +24,18 @@ import android.widget.TextView;
 public class DemoFragment extends Fragment {
 
     private RecyclerView recyclerView;
-
+    List<String> list;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        list = new ArrayList<>();
+        for (int i = 0; i < 20; i++) {
+            list.add("知识点1：给TabLayout加图标");
+            list.add("知识点2：使用v7包的Palette获取图片的推荐颜色");
+            list.add("知识点3：使用收缩布局");
+            list.add("知识点4：沉浸式状态栏并兼容4.4系统手机");
+        }
+
     }
 
     @Nullable
@@ -42,14 +55,14 @@ public class DemoFragment extends Fragment {
 
             @Override
             public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-                ((Myholer)holder).tv.setText(position+"");
+                ((Myholer)holder).tv.setText(list.get(position));
             }
 
 
 
             @Override
             public int getItemCount() {
-                return 50;
+                return list.size();
             }
 
             class Myholer extends RecyclerView.ViewHolder{
