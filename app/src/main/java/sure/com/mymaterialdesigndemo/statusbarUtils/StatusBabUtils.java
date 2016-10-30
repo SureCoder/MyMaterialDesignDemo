@@ -34,7 +34,7 @@ public class StatusBabUtils {
         //addStatusBarView();//不推荐使用添加view的方式，所以注释掉此代码
     }
 
-    private void addStatusBarView(Activity context) {
+    public static void addStatusBarView(Activity context) {
         View view = new View(context);
         view.setBackgroundColor(context.getResources().getColor(R.color.colorPrimary));//颜色自己指定
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
@@ -43,7 +43,7 @@ public class StatusBabUtils {
         decorView.addView(view, params);
     }
 
-    public int getStatusBarHeight(Context context) {
+    public static int getStatusBarHeight(Context context) {
         int resourceId = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
         return context.getResources().getDimensionPixelSize(resourceId);
     }
